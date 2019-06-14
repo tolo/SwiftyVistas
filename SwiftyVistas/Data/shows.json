@@ -1,0 +1,126 @@
+[
+  {
+    "showId": "is",
+    "title": "Otherworldly Iceland",
+    "description": "Iceland ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "image": "holuhraun",
+    "episodes": [
+      {
+        "episode": 1,
+        "season": 1,
+        "showId": "is",
+        "title": "Holuhraun & Bárðarbunga",
+        "description": "Iceland ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "holuhraun",
+        "length": "52m"
+      },
+      {
+        "episode": 2,
+        "season": 1,
+        "showId": "is",
+        "title": "Snæfellsjökull",
+        "description": "Iceland ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "snaefell",
+        "length": "44m"
+      },
+      {
+        "episode": 3,
+        "season": 1,
+        "showId": "is",
+        "title": "Fjallabak Nature Reserve",
+        "description": "Iceland ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "fjallabak",
+        "length": "47m"
+      },
+      {
+        "episode": 4,
+        "season": 1,
+        "showId": "is",
+        "title": "Landmannalaugar",
+        "description": "Iceland ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "landmannalaugar",
+        "length": "48m"
+      },
+      {
+        "episode": 5,
+        "season": 1,
+        "showId": "is",
+        "title": "Þingvellir National Park",
+        "description": "Iceland ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "thingvellir",
+        "length": "50m"
+      },
+      {
+        "episode": 6,
+        "season": 1,
+        "showId": "is",
+        "title": "Geysir",
+        "description": "Iceland ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "geysir",
+        "length": "49m"
+      }
+    ]
+  },
+  {
+    "showId": "nz",
+    "title": "Beautiful New Zealand",
+    "description": "New Zealand ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "image": "fiordland",
+    "episodes": [
+      {
+        "episode": 1,
+        "season": 1,
+        "showId": "nz",
+        "title": "Fiordland",
+        "description": "Fiordland, New Zealand, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "fiordland",
+        "length": "49m"
+      },
+      {
+        "episode": 2,
+        "season": 1,
+        "showId": "nz",
+        "title": "Aoraki / Mt Cook",
+        "description": "Aoraki / Mt Cook, New Zealand, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "mtcook",
+        "length": "42m"
+      },
+      {
+        "episode": 3,
+        "season": 1,
+        "showId": "nz",
+        "title": "Abel Tasman",
+        "description": "Abel Tasman National Park, New Zealand, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "abeltasman",
+        "length": "51m"
+      },
+      {
+        "episode": 4,
+        "season": 1,
+        "showId": "nz",
+        "title": "Cape Reinga",
+        "description": "Cape Reinga, New Zealand, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "capereinga",
+        "length": "42m"
+      },
+      {
+        "episode": 5,
+        "season": 1,
+        "showId": "nz",
+        "title": "McLean Falls, The Catlins",
+        "description": "McLean Falls, The Catlins, New Zealand, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "thecatlins",
+        "length": "47m"
+      },
+      {
+        "episode": 6,
+        "season": 1,
+        "showId": "nz",
+        "title": "Punakaiki / Pancake Rocks",
+        "description": "Punakaiki / Pancake Rocks, New Zealand, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "punakaiki",
+        "length": "49m"
+      }
+    ]
+  }
+]
