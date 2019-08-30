@@ -15,16 +15,11 @@ struct EpisodeSummaryView : View {
   var body: some View {
     VStack(alignment: .leading) {
       ZStack(alignment: .bottomTrailing) {
-        Image(selectedEpisode.image).resizable().frame(maxHeight: 250, alignment: .top)
-        Button(action: {
+        Image(selectedEpisode.image).resizable()
+          .frame(minHeight: 250, idealHeight: 250, alignment: .top)
+        CircleIconButton(imageSystemName: "play") {
           self.playbackError = true
-        }, label: {
-          ZStack(alignment: .center) {
-            Circle().foregroundColor(Color.black.opacity(0.5))
-            Image(systemName: "play").foregroundColor(Color.white).padding(EdgeInsets(top: 12, leading: 13, bottom: 12, trailing: 11))
-            Circle().stroke(Color.white)
-            }.fixedSize().padding()
-        })
+        }
       }
       
       HStack(spacing: 20) {
@@ -48,7 +43,7 @@ struct EpisodeSummaryView : View {
 
     }
     .background(Color.black)
-    .presentation($playbackError) {
+    .alert(isPresented: $playbackError) {
       Alert(title: Text("Alerts are"), message: Text("delightful"), dismissButton: .default(Text("Got it!")))
     }
   }

@@ -1,0 +1,13 @@
+**/xcuserdata/**
+*.xcuserdatad
+*.xcuserstate
+*.xcbkptlist
+*.pbxuser
+*.xcbaseline
+*.xccheckout
+*.hmap
+*.ipa
+Pods
+.idea
+notes
+.DS_Store

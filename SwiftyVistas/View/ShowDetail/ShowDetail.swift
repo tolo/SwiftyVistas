@@ -27,8 +27,8 @@ struct ShowDetail: View {
         }.padding([.leading, .trailing, .top])
 
       HStack(spacing: 0) {
-        TabButton(binding: $tabIndex, index: 0, title: "EPISODES")
-        TabButton(binding: $tabIndex, index: 1, title: "MY LIST (\(favoritesModel.favoriteEpisodes.count))")
+        TabButton(selectedIndex: $tabIndex, index: 0, title: "EPISODES")
+        TabButton(selectedIndex: $tabIndex, index: 1, title: "MY LIST (\(favoritesModel.favoriteEpisodes.count))")
         Spacer()
       }.padding([.vertical], 20)
 
@@ -53,14 +53,13 @@ private struct ActionButton: View {
   @State var showAlert = false
 
   var body: some View {
-    Button(action: {
-      self.showAlert = true
-    }) {
+    Button(action: action) {
       VStack(spacing: 16) {
         Image(systemName: icon).imageScale(.large)
         Text(title).font(.footnote)
         }.foregroundColor(.white)
-    }.presentation($showAlert) {
+    }
+    .alert(isPresented: $showAlert) {
       Alert(title: Text(alertMessage), dismissButton: .default(Text("👍")) {
         self.action()
       })
@@ -69,17 +68,17 @@ private struct ActionButton: View {
 }
 
 private struct TabButton: View {
-  let binding: Binding<Int>
+  @Binding var selectedIndex: Int
   let index: Int
   let title: String
 
   var body: some View {
     Button(action: {
-      self.binding.value = self.index
+      self.selectedIndex = self.index
     }) {
       VStack {
         Rectangle().frame(minWidth: 0, minHeight: 3, maxHeight: 3, alignment: .leading)
-          .foregroundColor(binding.value == index ? .red : .clear)
+        .foregroundColor(selectedIndex == index ? .red : .clear)
         Text(title).font(.footnote).bold().foregroundColor(.white).padding([.leading, .trailing])
       }
     }

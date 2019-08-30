@@ -14,14 +14,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-    let window = UIWindow(frame: UIScreen.main.bounds)
+    guard let windowScene = scene as? UIWindowScene else { return }
 
     UINavigationBar.appearance().tintColor = .white
 
     let rootView = ShowsList()
       .environmentObject(ShowsModel())
       .colorScheme(.dark)
-
+    
+    let window = UIWindow(windowScene: windowScene)
     window.rootViewController = UIHostingController(rootView: rootView)
     self.window = window
     window.rootViewController?.view.backgroundColor = .black

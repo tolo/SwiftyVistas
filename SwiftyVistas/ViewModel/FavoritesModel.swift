@@ -9,9 +9,9 @@
 import SwiftUI
 import Combine
 
-class FavoritesModel: BindableObject {
-  let didChange = PassthroughSubject<FavoritesModel, Never>()
-
+class FavoritesModel: ObservableObject {
+  let objectWillChange = PassthroughSubject<FavoritesModel, Never>()
+  
   let show: Show
 
   init(show: Show) {
@@ -21,12 +21,14 @@ class FavoritesModel: BindableObject {
   @UserDefault("FavoriteEpisodes", defaultValue: [])
   private (set) var favoriteEpisodeIds: [String] {
     didSet {
-      didChange.send(self)
+      objectWillChange.send(self)
     }
   }
 
   var favoriteEpisodes: [Episode] {
-    show.episodes.filter({ favoriteEpisodeIds.contains($0.id) })
+    favoriteEpisodeIds.compactMap { epId in
+      show.episodes.first { ep in ep.id == epId }
+    }
   }
 
   func addFavorite(_ favorite: String) {
@@ -41,27 +43,5 @@ class FavoritesModel: BindableObject {
 
   func removeFavorite(_ index: Int) {
     favoriteEpisodeIds.remove(at: index)
-  }
-}
-
-
-@propertyWrapper
-struct UserDefault<T> {
-  let key: String
-  let defaultValue: T
-
-  var value: T {
-    get {
-      return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
-    }
-    set {
-      UserDefaults.standard.set(newValue, forKey: key)
-    }
-  }
-
-  init(_ key: String, defaultValue: T) {
-    UserDefaults.standard.register(defaults: [key: defaultValue])
-    self.key = key
-    self.defaultValue = defaultValue
   }
 }

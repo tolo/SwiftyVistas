@@ -17,13 +17,12 @@ struct ShowsList : View {
       VStack(alignment: .leading) {
         Text("SwiftyVistas").font(.custom("AvenirNext-Heavy", size: 36)).bold().padding(.top, 22).padding(.leading, 32)
         if showListModel.isLoading {
-          LoadingView().padding([.bottom], 88)
+          LoadingView().padding([.bottom], 88).flexible()
         } else {
           List(showListModel.shows) { (s: Show) in
-            NavigationButton(destination:
+            NavigationLink(destination:
               ShowDetail(show: s, selectedEpisode: s.episodes[0])
                 .environmentObject(FavoritesModel(show: s))
-                .colorScheme(.dark)
             ) {
                 ShowListRow(item: s)
             }.accentColor(Color.white)

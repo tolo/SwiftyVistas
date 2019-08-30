@@ -14,7 +14,7 @@ struct LoadingView: View {
   var body: some View {
     let gradient = AngularGradient(gradient: Gradient(colors: [.black, .white]), center: UnitPoint(x: 0.5, y: 0.5))
 
-    return VStack {
+    return
       VStack {
         Spacer()
         HStack {
@@ -22,25 +22,21 @@ struct LoadingView: View {
           ZStack {
             Image("holuhraun").resizable()
               .aspectRatio(3.0 / 2.0, contentMode: .fit)
-              .frame(maxHeight: 150, alignment: .center)
               .clipShape(Circle())
-
             Circle().fill(gradient)
-              .frame(width: 150, height: 150, alignment: .center)
               .blendMode(.multiply)
               .rotationEffect(.degrees(rotation))
-          }
+          }.frame(width: 150, height: 150, alignment: .center)
           Spacer()
         }
         Spacer()
       }
-    }
-    .onAppear() {
-      withAnimation(.basic(duration: 2.0)) {
-        self.rotation = 1080
+      .onAppear() {
+        withAnimation(.linear(duration: 2.0)) {
+          self.rotation = 1080
+        }
       }
-    }
-    .transition(.opacity)
+      .transition(.opacity)
   }
 }
 

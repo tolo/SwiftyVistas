@@ -9,21 +9,17 @@
 import Combine
 import SwiftUI
 
-class ShowsModel: BindableObject {
-  let didChange = PassthroughSubject<ShowsModel, Never>()
-
-  private (set) var isLoading: Bool = false
-
-  private (set) var shows: [Show] = []
+class ShowsModel: ObservableObject {
+  @Published var isLoading: Bool = false
+  @Published var shows: [Show] = []
 
   func fetchShows() {
     isLoading = true
-    didChange.send(self)
 
+    // Simulate loading of data over network
     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
       self.isLoading = false
       self.shows = Show.loadDefault()
-      self.didChange.send(self)
     }
   }
 }
